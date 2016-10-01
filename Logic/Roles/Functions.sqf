@@ -1,5 +1,5 @@
-#define	DEBUG		true
-// #define	DEBUG		false
+// #define	DEBUG		true
+#define	DEBUG		false
 
 #define	GET_RA(X)		((X getVariable "dzn_roles_roleId") call dzn_fnc_roles_getRoleAttr)
 #define	GET_SQUAD(X)	GET_RA(X) select 0
@@ -225,7 +225,7 @@ dzn_fnc_roles_showMyRole = {
 		]    
 		, [-16,-0.25,140, 0.24]    
 		, [0,0,0,1]    
-		, 15    
+		, dzn_roles_playerRoleScreenShowTime - 1    
 	] call dzn_fnc_ShowMessage;
 };
 
@@ -244,7 +244,7 @@ dzn_fnc_roles_showORBAT = {
 	private _compileAndShow = {
 		private _orbatLine = "";
 		{
-			_orbatLine = format ["%1<br />%2", _orbatLine,  _x];
+			_orbatLine = format ["%1%3%2", _orbatLine,  _x, if (_forEachIndex > 0) then { "<br />" } else { "" }];
 		} forEach _this;		
 		hint parseText _orbatLine;	
 	};
@@ -313,3 +313,4 @@ dzn_fnc_roles_showORBAT = {
 	*/
 	_orbatHQLines call _compileAndShow;	
 };
+

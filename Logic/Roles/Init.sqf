@@ -11,11 +11,11 @@ if (hasInterface) then {
 		
 		call dzn_fnc_roles_showMyRole;
 		
-		sleep 10;		
+		sleep dzn_roles_playerRoleScreenShowTime;		
 		waitUntil { !isNil "dzn_roles_allAssigned" && { dzn_roles_allAssigned }};
 		call dzn_fnc_roles_showORBAT;
 		
-		sleep 3;
+		sleep 4;
 		cutText ["","BLACK IN"];
 	};
 };

@@ -1,4 +1,5 @@
 dzn_roles_assignmentDelay = 3;
+dzn_roles_playerRoleScreenShowTime = 11;
 
 dzn_roles_numberOfGroups = 2;
 
