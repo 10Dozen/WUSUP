@@ -22,11 +22,7 @@ dzn_fnc_notif_getTimelabel = {
 
 dzn_fnc_notif_showNotification = {
 	params[["_showTime", true],["_showHold",false], ["_loopTime", 10]];
-	
-	if (!isNil "Task_SeizeArea_Counter") then {
-		_showHold = true;
-	};	
-	
+
 	private _compileAndShow = {
 		private _notif = "";
 		{
@@ -37,6 +33,9 @@ dzn_fnc_notif_showNotification = {
 		
 		hintSilent parseText _notif;	
 	};
+		
+	if (EndGameTimer < 120) then {_showTime = true;};
+	if (!isNil "Task_SeizeArea_Counter") then {_showHold = true;} else {_showHold = false;};	
 	
 	for "_i" from 0 to _loopTime do {
 		
@@ -45,8 +44,12 @@ dzn_fnc_notif_showNotification = {
 			_lines pushBack (
 				format [
 					dzn_notif_timeLeftLine					
-					, _i call dzn_fnc_notif_getTimelabel
-					, dzn_notif_defaultColor
+					, EndGameTimer call dzn_fnc_notif_getTimelabel
+					, if (EndGameTimer < dzn_notif_timeLeftCritical) then {
+						dzn_notif_timeLeftCritical_Color
+					} else {
+						dzn_notif_defaultColor
+					}
 				]
 			);
 		};
@@ -55,8 +58,12 @@ dzn_fnc_notif_showNotification = {
 			_lines pushBack (
 				format [
 					dzn_notif_holdLeftLine					
-					, _i call dzn_fnc_notif_getTimelabel
-					, dzn_notif_defaultColor
+					, (dzn_tasks_seizeTime - Task_SeizeArea_Counter) call dzn_fnc_notif_getTimelabel
+					, if (dzn_tasks_seizeTime - Task_SeizeArea_Counter < dzn_notif_holdLeftCritical) then {
+						dzn_notif_holdLeftCritical_Color
+					} else {
+						dzn_notif_defaultColor
+					}
 				]
 			);
 		};
@@ -65,6 +72,17 @@ dzn_fnc_notif_showNotification = {
 		sleep 1;
 	};
 };
+
+dzn_fnc_notif_runTimeNotifHandler = {
+	dzn_notif_canCheck = true;
+	dzn_notif_waitAndCheck = {dzn_notif_canCheck = false; sleep 1; dzn_notif_canCheck = true;};
+
+	["dzn_notif_timeNotifHandler", "onEachFrame", {
+	
+	
+	}] call BIS_fnc_addStackedEventHandler;
+};
+
 
 
 /*

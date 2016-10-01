@@ -1,7 +1,178 @@
-// dzn_commonFunctions
+// dzn Common Functions (remove if not using it)
 #include "dzn_commonFunctions\dzn_commonFunctions.hpp"
 #include "dzn_commonFunctions\ui\baseDialogs.hpp"
 #include "dzn_commonFunctions\ui\copyPasteDialog.hpp"
 #include "dzn_commonFunctions\ui\dynamicDialog.hpp"
 
-enableDebugConsole = 2;
+// Debriefings
+#include "dzn_tSFramework\Modules\MissionConditions\Endings.hpp"
+
+enableDebugConsole = 1;
+disabledAI = 1;
+respawn = 3;
+respawnDelay = 9999999; 
+
+class Params
+{   
+	class par_delimeter0
+	{
+		title = "---- Game Settings ---------"; 
+		values[] = {0};
+		texts[] = {""};
+	};
+	class par_endgametimer
+	{
+		title = "    Время на выполнение (мин)";
+		values[] = {15,20,25,30,35,40,45,50,55,60,120};
+		default = 20;
+	}; 
+	class par_capturetimer
+	{
+		title = "    Время на захват (сек)";
+		values[] = {10,15,20,25,30,35,40,45,50,55,60,120};
+		default = 15;
+	}; 
+	
+	class par_delimeter1
+	{
+		title = "---- Faction Settings ---------"; 
+		values[] = {0};
+		texts[] = {""};
+	};
+	class par_playerFaction
+	{
+		title = "    Фракция игроков";
+		values[] = {0,1,2,3,4};
+		default = 0;
+		texts[] = {
+			"US Army"
+			, "USMC"
+			, "RU VV"
+			, "Rebels"
+			, "PMC"
+		};
+	}; 
+	class par_hostileFaction
+	{
+		title = "    Фракция противников";
+		values[] = {0,1,2,3,4};
+		default = 0;
+		texts[] = {
+			"US Army"
+			, "USMC"
+			, "RU VV"
+			, "Rebels"
+			, "PMC"		
+		};
+	}; 
+	class par_hostileArmor
+	{
+		title = "    Техника противника";
+		values[] = {0,1,2,3,4};
+		default = 0;
+		texts[] = {
+			"Нет"
+			, "Технички"
+			, "БТР"
+			, "БМП"
+			, "Танки"		
+		};
+	
+	};	
+	
+	class par_delimeter98
+	{
+		title = "---- Environment Settings ---------"; 
+		values[] = {0};
+		texts[] = {""};
+	};	
+	class par_daytime
+	{
+		title = "    Время суток";
+		values[] = {15,22};
+		default = 15;
+		texts[] = {"День","Ночь"};
+	}; 
+	class par_weather
+	{
+	    title = "    Погода";
+	    values[] = {0,1,2,3,4,5};       
+	    texts[] = {
+	        "Случайно"
+	        ,"Ясно"
+	        ,"Облачно"
+	        ,"Пасмурно"
+	        ,"Дождь"
+	        ,"Гроза"
+	    };
+	    default = 0;
+	};	
+	
+	class par_delimeter99
+	{
+		title = "---- Other Settings ---------"; 
+		values[] = {0};
+		texts[] = {""};
+	};	
+	class dzn_brv_enabled
+	{
+		title = "tS AAR Logging";
+		values[] = {0,1};
+		texts[] = {"Disabled","Enabled"};
+		default = 1;
+	};	
+	class par_dynai_delimeter
+	{
+		title = "---- dzn DynAI Settings ---------"; 
+		values[] = {0};
+		texts[] = {""};
+	};	
+	class par_dynai_amountMultiplier
+	{
+		title = "     Group Amount Multiplier";
+		values[] = {1,2,3,4,5,6,7,8,9,10};
+		default = 4;
+		texts[] = {
+			"x0.25"
+			,"x0.5"
+			,"x0.75"
+			,"x1"
+			,"x1.25"
+			,"x1.5"
+			,"x1.75"
+			,"x2"
+			,"Randomize (x1...1.5)"
+			,"Randomize (x1...2)"
+		};
+	};
+	class par_dynai_overrideSkill
+	{
+		title = "     Override Skill";
+		values[] = {0,1,2};
+		default = 0;
+		texts[] = {
+			"No"
+			, "General"
+			, "Complex"
+		};
+	};
+	class par_dynai_skillGeneral
+	{
+		title = "          Skill: General (%)";
+		values[] = {60,65,70,75,80,85,90,95,100};
+		default = 95;
+	};
+	class par_dynai_skillAccuracy
+	{
+		title = "          Skill (Complex): Accuracy (%)";
+		values[] = {40,45,50,55,60,65,70,75,80,85,90,95,100};
+		default = 80;
+	};
+	class par_dynai_skillAimSpeed
+	{
+		title = "          Skill (Complex): Aiming Speed (%)";
+		values[] = {40,45,50,55,60,65,70,75,80,85,90,95,100};
+	};
+};
+
+
