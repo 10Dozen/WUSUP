@@ -15,6 +15,8 @@ if (hasInterface && tSF_MissionDefaults_DisableInputOnStart) then {
 
 		hintSilent parseText (format ["<t color='#AAAAAA' font='PuristaLight' size='0.8'>%1</t>", tSF_MissionDefaults_SubtitleText]);
 
+		sleep tSF_MissionDefaults_DisableInputTimer;
+		
 		player enableSimulation true;
 		disableUserInput false;
 	};

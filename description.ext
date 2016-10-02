@@ -56,7 +56,7 @@ class Params
 	{
 		title = "    Фракция противников";
 		values[] = {0,1,2,3,4};
-		default = 0;
+		default = 3;
 		texts[] = {
 			"US Army"
 			, "USMC"
@@ -89,8 +89,8 @@ class Params
 	class par_daytime
 	{
 		title = "    Время суток";
-		values[] = {15,22};
-		default = 15;
+		values[] = {0,1};
+		default = 0;
 		texts[] = {"День","Ночь"};
 	}; 
 	class par_weather
@@ -116,7 +116,7 @@ class Params
 	};	
 	class dzn_brv_enabled
 	{
-		title = "tS AAR Logging";
+		title = "     tS AAR Logging";
 		values[] = {0,1};
 		texts[] = {"Disabled","Enabled"};
 		default = 1;
@@ -172,6 +172,7 @@ class Params
 	{
 		title = "          Skill (Complex): Aiming Speed (%)";
 		values[] = {40,45,50,55,60,65,70,75,80,85,90,95,100};
+		default = 80;
 	};
 };
 

@@ -8,22 +8,22 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=147;
+		nextID=151;
 	};
 	class MarkerIDProvider
 	{
-		nextID=2;
+		nextID=3;
 	};
 	class LayerIndexProvider
 	{
-		nextID=5;
+		nextID=11;
 	};
 	class Camera
 	{
-		pos[]={3639.2991,1094.8469,4398.4526};
-		dir[]={0.088335991,-0.92578602,0.3677322};
-		up[]={0.21623398,0.37807754,0.90016299};
-		aside[]={0.97238892,-2.59839e-007,-0.23358355};
+		pos[]={1524.1385,50.652679,4932.146};
+		dir[]={0.18312481,-0.78260583,0.59499383};
+		up[]={0.23021659,0.62248391,0.74800032};
+		aside[]={0.95576686,-2.5998452e-007,-0.29416105};
 	};
 };
 binarizationWanted=0;
@@ -31,13 +31,14 @@ addons[]=
 {
 	"A3_Modules_F",
 	"A3_Ui_F",
-	"A3_Data_F_Curator_Characters"
+	"A3_Data_F_Curator_Characters",
+	"A3_Modules_F_Curator_Curator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=3;
+		items=4;
 		class Item0
 		{
 			className="A3_Modules_F";
@@ -59,16 +60,109 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="http://www.arma3.com";
 		};
+		class Item3
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="http://www.arma3.com";
+		};
 	};
 };
 randomSeed=1038794;
 class ScenarioData
 {
-	author="Buzzil";
+	author="Tactical Shift";
+	overviewText="Warm Up and prepare Uranus";
+	onLoadMission="Warm Up and prepare Uranus";
+	saving=0;
+	respawnDialog=0;
+	disabledAI=1;
+	respawn=3;
+	class Header
+	{
+		gameType="Coop";
+		minPlayers=1;
+		maxPlayers=19;
+	};
 };
 class CustomAttributes
 {
 	class Category0
+	{
+		name="Multiplayer";
+		class Attribute0
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnTemplates";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"ARRAY"
+						};
+					};
+					class value
+					{
+						items=2;
+						class Item0
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="ace_spectator";
+							};
+						};
+						class Item1
+						{
+							class data
+							{
+								class type
+								{
+									type[]=
+									{
+										"STRING"
+									};
+								};
+								value="EndMission";
+							};
+						};
+					};
+				};
+			};
+		};
+		nAttributes=2;
+	};
+	class Category1
 	{
 		name="Scenario";
 		class Attribute0
@@ -86,7 +180,7 @@ class CustomAttributes
 							"SCALAR"
 						};
 					};
-					value=2;
+					value=1;
 				};
 			};
 		};
@@ -97,6 +191,8 @@ class Mission
 {
 	class Intel
 	{
+		briefingName="WUSUP";
+		overviewText="Role-random, mind-blowing straigth-action mission";
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
 		startWind=0.1;
@@ -119,7 +215,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=21;
+		items=24;
 		class Item0
 		{
 			dataType="Layer";
@@ -215,7 +311,7 @@ class Mission
 						{
 							dataType="Trigger";
 							position[]={6454.1685,7.9821687,5378.458};
-							angle=2.3039446;
+							angle=2.3039443;
 							class Attributes
 							{
 								sizeA=25;
@@ -323,8 +419,8 @@ class Mission
 					dataType="Logic";
 					class PositionInfo
 					{
-						position[]={3564.1255,32.923592,5514.5527};
-						angles[]={0.38480991,0,6.1835165};
+						position[]={3900.1084,26.850573,5543.6089};
+						angles[]={6.1934271,0,0.31874755};
 					};
 					name="tasksCore";
 					id=83;
@@ -1380,6 +1476,147 @@ class Mission
 			{
 			};
 			id=145;
+		};
+		class Item21
+		{
+			dataType="Layer";
+			name="tSF Layer";
+			class Entities
+			{
+				items=1;
+				class Item0
+				{
+					dataType="Logic";
+					class PositionInfo
+					{
+						position[]={1588.6896,5.5,5013.2373};
+					};
+					init="this setVariable ['addons',3,true];this setVariable ['owner','#adminLogged',true];";
+					id=147;
+					type="ModuleCurator_F";
+					class CustomAttributes
+					{
+						class Attribute0
+						{
+							property="ModuleCurator_F_Owner";
+							expression="_this setVariable ['Owner',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						class Attribute1
+						{
+							property="ModuleCurator_F_Forced";
+							expression="_this setVariable ['Forced',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=0;
+								};
+							};
+						};
+						class Attribute2
+						{
+							property="ModuleCurator_F_Name";
+							expression="_this setVariable ['Name',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"STRING"
+										};
+									};
+									value="";
+								};
+							};
+						};
+						class Attribute3
+						{
+							property="ModuleInfo";
+							expression="false";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"BOOL"
+										};
+									};
+									value=1;
+								};
+							};
+						};
+						class Attribute4
+						{
+							property="ModuleCurator_F_Addons";
+							expression="_this setVariable ['Addons',_value,true];";
+							class Value
+							{
+								class data
+								{
+									class type
+									{
+										type[]=
+										{
+											"SCALAR"
+										};
+									};
+									value=2;
+								};
+							};
+						};
+						nAttributes=5;
+					};
+				};
+			};
+			id=148;
+		};
+		class Item22
+		{
+			dataType="Marker";
+			position[]={1538.7428,6.8784626e+021,5004.3984};
+			name="respawn_west";
+			type="mil_start";
+			alpha=0;
+			id=149;
+			atlOffset=6.8784626e+021;
+		};
+		class Item23
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={1655.7203,5.5,5014.9902};
+			};
+			name="dzn_dynai_core";
+			id=150;
+			type="Logic";
 		};
 	};
 	class Connections

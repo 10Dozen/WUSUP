@@ -22,6 +22,6 @@ tSF_MissionCondition_DefaultCheckTimer 			= 2;
  *		];
 */ 
 
-MissionCondition1 = [ "WIN", "Task_SeizeArea_Done && EndGameTimer >= 0", "Zone captured" ];
+MissionCondition1 = [ "WIN", "!isNil 'Task_SeizeArea_Done' && EndGameTimer >= 0", "Zone captured" ];
 MissionCondition2 = [ "FAIL", "EndGameTimer <= 0", "Time end" ];
-MissionCondition3 = [ "WIPED", "{alive _x} count (call BIS_fnc_listPlayers)", "All dead", 30 ];
+MissionCondition3 = [ "WIPED", "{alive _x} count (call BIS_fnc_listPlayers) < 1", "All dead", 30 ];

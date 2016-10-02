@@ -50,3 +50,11 @@ dzn_roles_squadNames = [
 	, [3, "1'6"]
 ];
 
+dzn_roles_faction = 	[
+					"usarmy" 	/*"US Army"*/
+					,"usmc" 	/*"USMC"*/
+					,"ruvv" 	/*"RU VV"*/
+					,"rebels" 	/*"Rebels"*/
+					,"pmc" 	/*"PMC"*/
+				] select ("par_playerFaction" call BIS_fnc_getParamValue);
+

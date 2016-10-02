@@ -18,16 +18,15 @@ if (hasInterface) then {
 		sleep 4;
 		cutText ["","BLACK IN"];
 	};
+	
+	
 };
 
 if !(isServer || isDedicated) exitWith {};
 
 dzn_roles_assignmentTable = [];
 dzn_roles_groups = [];
-
-dzn_roles_faction = "nato";
 dzn_roles_pl = objNull;
-
 
 dzn_roles_canCheckAssignment = true;
 dzn_roles_waitAndCheckAssignment = {

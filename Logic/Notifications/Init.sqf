@@ -1,18 +1,12 @@
 call compile preprocessFileLineNumbers "Logic\Notifications\Settings.sqf";
 call compile preprocessFileLineNumbers "Logic\Notifications\Functions.sqf";
 
+if !(hasInterface) exitWith {};
 
-if (hasInterface) then {
-	[] spawn {
-		waitUntil {!isNull player && {player getVariable ["dzn_roles_assigned", false]}};
-		waitUntil {!isNil "Task_StartPos"};		
-		
-		call dzn_fnc_tasks_client_movePlayerToStartPos;
-	};
-};
+waitUntil { time > 0 };
 
-if !(isServer || isDedicated) exitWith {};
+call dzn_fnc_notif_addORBATTopic;
+call dzn_fnc_notif_addTimeTopics;
 
-waitUntil { time > dzn_tasks_taskInitDelay };
-Task = call dzn_fnc_tasks_getRandomTask;
-Task spawn dzn_fnc_tasks_activateTask;
+[] spawn dzn_fnc_notif_runTimeNotifHandler;
+[] spawn dzn_fnc_notif_runCaptureNotifHandler;

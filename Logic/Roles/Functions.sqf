@@ -58,6 +58,9 @@ dzn_fnc_roles_processAssignments = {
 	
 	dzn_roles_allAssigned = true;
 	publicVariable "dzn_roles_allAssigned";
+	publicVariable "dzn_roles_assignmentTable";
+	
+	
 };
 
 dzn_fnc_roles_assignPlayersRole = {
@@ -148,6 +151,8 @@ dzn_fnc_roles_createGroups = {
 	for "_i" from 1 to dzn_roles_numberOfGroups do {	
 		dzn_roles_groups pushBack (createGroup west);
 	};
+	
+	publicVariable "dzn_roles_groups";
 };
 
 dzn_fnc_roles_debug_drawRole = {
@@ -311,6 +316,9 @@ dzn_fnc_roles_showORBAT = {
 	/*
 		Output
 	*/
+	
+	dzn_roles_OrbatDrawn = true;
 	_orbatHQLines call _compileAndShow;	
+	[] spawn { sleep 3; dzn_roles_OrbatDrawn = false };
 };
 
