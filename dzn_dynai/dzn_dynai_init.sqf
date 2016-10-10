@@ -1,5 +1,5 @@
 // **************************
-// 	DZN DYNAI v0.6
+// 	DZN DYNAI v0.7
 //
 //	Initialized when:
 //	{ !isNil "dzn_dynai_initialized" }
@@ -29,7 +29,7 @@ dzn_dynai_complexSkill = [
 // **************************
 
 // Condition of initialization
-#define	dzn_dynai_CONDITION_BEFORE_INIT	true
+#define	dzn_dynai_CONDITION_BEFORE_INIT	!isNil "dzn_hostiles_LocatonsSet"
 
 // **************************
 //	INITIALIZATION

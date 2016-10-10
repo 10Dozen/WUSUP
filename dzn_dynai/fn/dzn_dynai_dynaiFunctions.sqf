@@ -302,7 +302,7 @@ dzn_fnc_dynai_createZone = {
 	if (DEBUG) then { diag_log format ["dzn_dynai :: %1 :: Spawning groups", _name]; };
 	// For each groups templates
 	{
-		_count = round( (_x select 0) * (call dzn_fnc_dynai_getMultiplier) );
+		_count = ceil( (_x select 0) * (call dzn_fnc_dynai_getMultiplier) );
 		_groupUnits = _x select 1;
 		_groupSkill = if (!isNil {_x select 2}) then { _x select 2 } else { dzn_dynai_complexSkill };
 		

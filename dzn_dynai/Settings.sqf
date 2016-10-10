@@ -23,7 +23,7 @@ dzn_dynai_UseSimpleSkill			=	false;
 dzn_dynai_overallSkillLevel			=	0.95;
 dzn_dynai_complexSkillLevel			=	[
 	["general", 0.95]
-	,["aimingAccuracy", 0.8],["aimingShake", 0.8],["aimingSpeed", 0.9],["reloadSpeed", 0.7]
+	,["aimingAccuracy", 0.7],["aimingShake", 0.8],["aimingSpeed", 0.9],["reloadSpeed", 0.7]
 	,["spotDistance", 1],["spotTime", 1],["commanding", 1]
 	,["endurance", 0.95],["courage", 0.7]
 ];

@@ -10,7 +10,6 @@ dzn_fnc_tasks_activateTask = {
 		Start position
 	*/
 	private _startPosCore = CSELECT(_syncObjs, { typeof _x == "LocationArea_F" });
-	T = _startPosCore;
 	Task_StartPos = getPosASL ( 
 		selectRandom ( 
 			[
@@ -29,8 +28,8 @@ dzn_fnc_tasks_activateTask = {
 		Dynai Zones
 	*/
 	private _dynaiZonesCore = CSELECT(_syncObjs, { typeof _x == "LocationCamp_F" });
-	Task_DynaiZones = CSELECT(synchronizedObjects _dynaiZonesCore, { typeof _x == "Logic" });
-	
+	Task_DynaiZone_Main = CSELECT(synchronizedObjects _dynaiZonesCore, { typeof _x == "LocationBase_F" });
+	Task_DynaiZone_Reinforcement = CSELECT(synchronizedObjects _dynaiZonesCore, { typeof _x == "LocationOutpost_F" });
 	
 	/*
 		Publish
@@ -42,7 +41,8 @@ dzn_fnc_tasks_activateTask = {
 	
 	publicVariable "Task_StartPos";
 	publicVariable "Task_SeizeArea";
-	publicVariable "Task_DynaiZones";	
+	publicVariable "Task_DynaiZone_Main";
+	publicVariable "Task_DynaiZone_Reinforcement";	
 };
 
 dzn_fnc_tasks_createSimpleTask = {	

@@ -65,6 +65,18 @@ class Params
 			, "PMC"		
 		};
 	}; 
+	class par_hostileAmount
+	{
+		title = "    Количество противника";
+		values[] = {0,1,2,3};
+		default = 3;
+		texts[] = {
+			"Мало (1-4 игрока)"
+			, "Средне (4-8 игроков)"
+			, "Достаточно (8-13 игроков)"
+			, "Много (13-19 игроков)"
+		};
+	};	
 	class par_hostileArmor
 	{
 		title = "    Техника противника";
@@ -76,8 +88,7 @@ class Params
 			, "БТР"
 			, "БМП"
 			, "Танки"		
-		};
-	
+		};	
 	};	
 	
 	class par_delimeter98
@@ -110,7 +121,7 @@ class Params
 	
 	class par_delimeter99
 	{
-		title = "---- Other Settings ---------"; 
+		title = "---- Other Settings (optional) ---------"; 
 		values[] = {0};
 		texts[] = {""};
 	};	
