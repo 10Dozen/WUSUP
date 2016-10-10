@@ -8,7 +8,7 @@ class EditorData
 	toggles=1;
 	class ItemIDProvider
 	{
-		nextID=155;
+		nextID=157;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=17;
+		nextID=23;
 	};
 	class Camera
 	{
-		pos[]={1524.1385,50.652679,4932.146};
-		dir[]={0.18312481,-0.78260583,0.59499383};
-		up[]={0.23021659,0.62248391,0.74800032};
-		aside[]={0.95576686,-2.5998452e-007,-0.29416105};
+		pos[]={1525.6968,384.94437,4949.7104};
+		dir[]={0.59213763,-0.46062365,0.66122949};
+		up[]={0.30731624,0.88756877,0.34317461};
+		aside[]={0.74496394,1.193257e-007,-0.66712117};
 	};
 };
 binarizationWanted=0;
@@ -93,6 +93,25 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
+				};
+			};
+		};
+		class Attribute1
+		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -141,25 +160,6 @@ class CustomAttributes
 				};
 			};
 		};
-		class Attribute1
-		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
-				};
-			};
-		};
 		nAttributes=2;
 	};
 	class Category1
@@ -191,7 +191,7 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="WUSUP";
+		briefingName="WUSUP (2A)";
 		overviewText="Role-random, mind-blowing straigth-action mission";
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
@@ -215,7 +215,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=26;
+		items=28;
 		class Item0
 		{
 			dataType="Layer";
@@ -1637,16 +1637,40 @@ class Mission
 			id=154;
 			type="Logic";
 		};
+		class Item26
+		{
+			dataType="Trigger";
+			position[]={1643.255,5.5,5086.043};
+			class Attributes
+			{
+				sizeA=10;
+				sizeB=10;
+			};
+			id=155;
+			type="EmptyDetector";
+		};
+		class Item27
+		{
+			dataType="Trigger";
+			position[]={1577.344,5.5,5081.6875};
+			class Attributes
+			{
+				sizeA=10;
+				sizeB=10;
+			};
+			id=156;
+			type="EmptyDetector";
+		};
 	};
 	class Connections
 	{
 		class LinkIDProvider
 		{
-			nextID=32;
+			nextID=34;
 		};
 		class Links
 		{
-			items=32;
+			items=34;
 			class Item0
 			{
 				linkID=0;
@@ -1962,6 +1986,26 @@ class Mission
 				linkID=31;
 				item0=154;
 				item1=150;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item32
+			{
+				linkID=32;
+				item0=156;
+				item1=153;
+				class CustomData
+				{
+					type="Sync";
+				};
+			};
+			class Item33
+			{
+				linkID=33;
+				item0=155;
+				item1=154;
 				class CustomData
 				{
 					type="Sync";

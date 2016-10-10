@@ -12,11 +12,11 @@ dzn_hostiles_faction = 	[
 ] select ("par_hostileFaction" call BIS_fnc_getParamValue);
 
 dzn_hostiles_armor = [ 
-	"no"
-	, "car"
-	, "apc"
-	, "icv"
-	, "mbt" 
+	[""]
+	, ["carClass"]
+	, ["apc"]
+	, ["icv"]
+	, ["mbt"]
 ] select ("par_hostileArmor" call BIS_fnc_getParamValue);
 
 dzn_hostiles_groupsPerAmount = [
@@ -25,4 +25,8 @@ dzn_hostiles_groupsPerAmount = [
 	,["MB"	, [4, 6, 8, 10]]		/* Men in Buildings */
 	,["VRH"	, [1, 1, 1, 2]]		/* Vehicle Road Hold */
 	,["VRP"	, [0, 0, 1, 1]]		/* Vehicle Road Patrol */
+	
+	,["4MP-R"	, [1, 1, 2, 2]]		/* 4 Men Patrol Reinforcement */
+	,["V-R"	, [0, 1, 1, 1]]		/* Vehicle Patrol Reinforcement */
 ];
+

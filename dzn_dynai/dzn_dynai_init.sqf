@@ -29,7 +29,8 @@ dzn_dynai_complexSkill = [
 // **************************
 
 // Condition of initialization
-#define	dzn_dynai_CONDITION_BEFORE_INIT	!isNil "dzn_hostiles_LocatonsSet"
+#define	dzn_dynai_CONDITION_BEFORE_INIT	true
+//!isNil "dzn_hostiles_LocationsSet"
 
 // **************************
 //	INITIALIZATION
@@ -49,6 +50,7 @@ dzn_dynai_zoneProperties = [
 ];
 
 call compile preProcessFileLineNumbers "dzn_dynai\fn\dzn_dynai_dynaiFunctions.sqf";
+call compile preProcessFileLineNumbers "dzn_dynai\fn\dzn_dynai_controlFunctions.sqf";
 call compile preProcessFileLineNumbers "dzn_dynai\fn\dzn_dynai_behaviourFunctions.sqf";
 
 //	**************	SERVER OR HEADLESS	*****************

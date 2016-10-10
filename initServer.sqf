@@ -2,8 +2,10 @@
 
 if !(hasInterface) then {
 	[] execVM "Logic\Roles\Init.sqf";
-	[] execVM "Logic\Tasks\Init.sqf";
+	[] execVM "Logic\Tasks\Init.sqf";	
 };
+
+// [] execVM "Logic\Hostiles\Init.sqf";
 
 EndGameTimerLimit = ("par_endgametimer" call BIS_fnc_getParamValue)*60;
 EndGameTimer = EndGameTimerLimit;
