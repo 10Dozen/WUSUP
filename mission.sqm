@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=23;
+		nextID=29;
 	};
 	class Camera
 	{
 		pos[]={1525.6968,384.94437,4949.7104};
-		dir[]={0.59213763,-0.46062365,0.66122949};
-		up[]={0.30731624,0.88756877,0.34317461};
-		aside[]={0.74496394,1.193257e-007,-0.66712117};
+		dir[]={0.39272225,-0.87119621,0.29463845};
+		up[]={0.69688445,0.49090299,0.52283514};
+		aside[]={0.6001336,-4.4330955e-007,-0.79991359};
 	};
 };
 binarizationWanted=0;
@@ -93,25 +93,6 @@ class CustomAttributes
 		name="Multiplayer";
 		class Attribute0
 		{
-			property="RespawnButton";
-			expression="true";
-			class Value
-			{
-				class data
-				{
-					class type
-					{
-						type[]=
-						{
-							"SCALAR"
-						};
-					};
-					value=0;
-				};
-			};
-		};
-		class Attribute1
-		{
 			property="RespawnTemplates";
 			expression="true";
 			class Value
@@ -157,6 +138,25 @@ class CustomAttributes
 							};
 						};
 					};
+				};
+			};
+		};
+		class Attribute1
+		{
+			property="RespawnButton";
+			expression="true";
+			class Value
+			{
+				class data
+				{
+					class type
+					{
+						type[]=
+						{
+							"SCALAR"
+						};
+					};
+					value=0;
 				};
 			};
 		};
@@ -1640,7 +1640,7 @@ class Mission
 		class Item26
 		{
 			dataType="Trigger";
-			position[]={1643.255,5.5,5086.043};
+			position[]={1612.2606,5.5,5089.7407};
 			class Attributes
 			{
 				sizeA=10;
@@ -1652,7 +1652,7 @@ class Mission
 		class Item27
 		{
 			dataType="Trigger";
-			position[]={1577.344,5.5,5081.6875};
+			position[]={1595.1489,5.5,5089.0889};
 			class Attributes
 			{
 				sizeA=10;
@@ -1666,11 +1666,11 @@ class Mission
 	{
 		class LinkIDProvider
 		{
-			nextID=34;
+			nextID=32;
 		};
 		class Links
 		{
-			items=34;
+			items=32;
 			class Item0
 			{
 				linkID=0;
@@ -1986,26 +1986,6 @@ class Mission
 				linkID=31;
 				item0=154;
 				item1=150;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item32
-			{
-				linkID=32;
-				item0=156;
-				item1=153;
-				class CustomData
-				{
-					type="Sync";
-				};
-			};
-			class Item33
-			{
-				linkID=33;
-				item0=155;
-				item1=154;
 				class CustomData
 				{
 					type="Sync";

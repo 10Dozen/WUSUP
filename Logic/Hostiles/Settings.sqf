@@ -1,5 +1,7 @@
 dzn_hostiles_initDelay = 15;
 
+dzn_hostiles_reinforcementCheckTimer = 30;
+
 dzn_hostiles_side				=	east;
 dzn_hostiles_baseInfantryClass	=	"O_Soldier_F";
 

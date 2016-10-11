@@ -29,8 +29,8 @@ dzn_dynai_complexSkill = [
 // **************************
 
 // Condition of initialization
-#define	dzn_dynai_CONDITION_BEFORE_INIT	true
-//!isNil "dzn_hostiles_LocationsSet"
+#define	dzn_dynai_CONDITION_BEFORE_INIT	!isNil "dzn_hostiles_LocationsSet"
+//
 
 // **************************
 //	INITIALIZATION

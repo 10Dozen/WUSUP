@@ -70,8 +70,8 @@ dzn_fnc_hostiles_generateGroups = {
 dzn_fnc_hostiles_updateGroups = {
 	private _groups = call dzn_fnc_hostiles_generateGroups;
 	
-	["Main", _groups select 0] call dzn_fnc_dynai_setGroupTemplates;	
-	["Reinforcement", _groups select 1] call dzn_fnc_dynai_setGroupTemplates;
+	[Main, _groups select 0] call dzn_fnc_dynai_setGroupTemplates;	
+	[Reinforcement, _groups select 1] call dzn_fnc_dynai_setGroupTemplates;
 };
 
 
@@ -81,7 +81,7 @@ dzn_fnc_hostiles_updateGroups = {
 */
 dzn_fnc_hostiles_addLocationsMain = {
 	private _trgs = [synchronizedObjects Task_DynaiZone_Main, { _x isKindOf "EmptyDetector" }] call BIS_fnc_conditionalSelect;
-
+	
 	{
 		_x synchronizeObjectsRemove [Task_DynaiZone_Main];
 		_x synchronizeObjectsAdd [Main];
@@ -97,9 +97,25 @@ dzn_fnc_hostiles_addLocationsReinforcement = {
 	} forEach _trgs;	
 };
 
+dzn_fnc_hostiles_getReinforcementRandomPositions = {
+	private _poses = [];
+	for "_i" from 0 to 6 do {
+		_poses pushBack ([getPosATL Main, random(360), 100 + random(1100)] call dzn_fnc_getPosOnGivenDir);
+	};
+	
+	_poses
+};
 
 
 /*
-
-
+	REINFORCEMENTS
 */
+
+dzn_fnc_hostiles_runReinfocementCaller = {
+	waitUntil { 
+		sleep dzn_hostiles_reinforcementCheckTimer;
+		[Task_SeizeArea, 300, "bool"] call dzn_fnc_isPlayerNear
+	};
+	
+	dzn_hostiles_reinforcementsCalled = true;
+};

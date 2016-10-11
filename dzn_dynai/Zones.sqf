@@ -3,7 +3,7 @@
 
 [
     "Main", /* Zone Name */
-    "EAST",true, /* Side, is Active */ [],[],
+    "EAST",false, /* Side, is Active */ [],[],
     /* Groups: */
     [],
     /* Behavior: Speed, Behavior, Combat mode, Formation */
@@ -12,7 +12,7 @@
 
 ,[
     "Reinforcement", /* Zone Name */
-    "EAST",true, /* Side, is Active */ [],[],
+    "EAST",false, /* Side, is Active */ [],[],
     /* Groups: */
     [],
     /* Behavior: Speed, Behavior, Combat mode, Formation */
