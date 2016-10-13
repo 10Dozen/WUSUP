@@ -42,27 +42,22 @@ class Params
 	class par_playerFaction
 	{
 		title = "    Фракция игроков";
-		values[] = {0,1,2,3,4};
+		values[] = {0,1};
 		default = 0;
 		texts[] = {
-			"US Army"
-			, "USMC"
-			, "RU VV"
-			, "Rebels"
-			, "PMC"
+			"US Army (OCP)"
+			, "RU VV Specnaz"
 		};
 	}; 
 	class par_hostileFaction
 	{
 		title = "    Фракция противников";
-		values[] = {0,1,2,3,4};
-		default = 3;
+		values[] = {0,1,2};
+		default = 2;
 		texts[] = {
-			"US Army"
-			, "USMC"
-			, "RU VV"
-			, "Rebels"
-			, "PMC"		
+			"US Army (OCP)"
+			, "RU VV Specnaz"
+			, "Rebels"		
 		};
 	}; 
 	class par_hostileAmount
@@ -100,9 +95,9 @@ class Params
 	class par_daytime
 	{
 		title = "    Время суток";
-		values[] = {0,1};
+		values[] = {0,1,2};
 		default = 0;
-		texts[] = {"День","Ночь"};
+		texts[] = {"День","Ночь","Случайно"};
 	}; 
 	class par_weather
 	{

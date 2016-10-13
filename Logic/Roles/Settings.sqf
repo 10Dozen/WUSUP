@@ -51,10 +51,7 @@ dzn_roles_squadNames = [
 ];
 
 dzn_roles_faction = 	[
-					"usarmy" 	/*"US Army"*/
-					,"usmc" 	/*"USMC"*/
+					"usocp" 	/*"US OCP"*/					
 					,"ruvv" 	/*"RU VV"*/
-					,"rebels" 	/*"Rebels"*/
-					,"pmc" 	/*"PMC"*/
 				] select ("par_playerFaction" call BIS_fnc_getParamValue);
 

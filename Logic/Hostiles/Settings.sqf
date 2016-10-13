@@ -6,11 +6,9 @@ dzn_hostiles_side				=	east;
 dzn_hostiles_baseInfantryClass	=	"O_Soldier_F";
 
 dzn_hostiles_faction = 	[
-	"usarmy" 	/*"US Army"*/
-	,"usmc" 	/*"USMC"*/
+	"usocp" 	/*"US Army"*/
 	,"ruvv" 	/*"RU VV"*/
 	,"rebels" 	/*"Rebels"*/
-	,"pmc" 	/*"PMC"*/
 ] select ("par_hostileFaction" call BIS_fnc_getParamValue);
 
 dzn_hostiles_armor = [ 

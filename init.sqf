@@ -1,7 +1,9 @@
-if ("par_daytime" call BIS_fnc_getParamValue == 0) then {
-    setDate [2016,7,7,10 + round(random 4), 00]; // в формате [Год, Месяц, День, Час, Минуты]
-} else {
-    setDate [2016,7,7, 21 + round(random 8), 00];
+tf_no_auto_long_range_radio = true;
+
+switch ("par_daytime" call BIS_fnc_getParamValue ) do {
+	case 0: { setDate [2016,7,7,10 + round(random 4), 00]; };
+	case 1: { setDate [2016,7,7, 21 + round(random 8), 00]; };
+	case 2: { setDate [2016,7,7, round(random 24), 00]; };
 };
 
   // dzn Gear

@@ -76,8 +76,11 @@ dzn_fnc_roles_assignPlayersRole = {
 		KIT
 		kit_nato_ftl
 	*/
-	private _kit = format ["kit_%1_%2", dzn_roles_faction, _role];
-	
+	private _kit = format ["kit_%1_%2", dzn_roles_faction, toLower(_role)];
+	_kit spawn {
+		waitUntil { !isNil "dzn_gear_initDone" };
+		[player, _this] call dzn_fnc_gear_assignKit;
+	};
 	/*
 		Join Group
 	*/
