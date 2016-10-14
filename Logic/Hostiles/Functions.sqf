@@ -4,8 +4,16 @@
 */
 dzn_fnc_hostiles_generateGroups = {
 	private _par_amount = ("par_hostileAmount" call BIS_fnc_getParamValue);
+	
 	private _kit = format["kit_%1_random", dzn_hostiles_faction];	
-	private _kitVeh = format ["kit_%1_vehicle", dzn_hostiles_faction];
+	private _kitVeh = "kit_vehicle";
+	/*format ["kit_%1_vehicle", dzn_hostiles_faction];*/
+	
+	private _vehicleClasses  = if (dzn_hostiles_armor > 0) then { 
+		([dzn_hostiles_armorClassPerFaction, dzn_hostiles_faction] call dzn_fnc_getValueByKey) select (dzn_hostiles_armor - 1)
+	} else {
+		[]
+	};	
 
 	#define	MAN_PATROL		[dzn_hostiles_baseInfantryClass, [], _kit]
 	#define	MAN_BUILD		[dzn_hostiles_baseInfantryClass, ["indoors"], _kit]
@@ -14,9 +22,9 @@ dzn_fnc_hostiles_generateGroups = {
 	#define	MAN_GUNNER		[dzn_hostiles_baseInfantryClass, [0,"Gunner"], _kit]
 	#define	MAN_COMANDER	[dzn_hostiles_baseInfantryClass, [0,"Commander"], _kit]
 	
-	#define	GET_RANDOM_VEH	(selectRandom dzn_hostiles_armor)
+	#define	GET_RANDOM_VEH	(selectRandom _vehicleClasses)
 	#define	VEH_ROADHOLD	[GET_RANDOM_VEH, "Vehicle Road Hold", _kitVeh]
-	#define	VEH_ROADPATROL	[GET_RANDOM_VEH, "Vehicle Road Patrol", _kitVeh]
+	#define	VEH_ROADPATROL	[GET_RANDOM_VEH, "Vehicle Road Hold", _kitVeh]
 	#define	VEH_PATROL		[GET_RANDOM_VEH, "Vehicle Patrol", _kitVeh]
 	
 	#define	GET_AMOUNT(X)	(([dzn_hostiles_groupsPerAmount,X] call dzn_fnc_getValueByKey) select _par_amount)
@@ -34,19 +42,19 @@ dzn_fnc_hostiles_generateGroups = {
 	
 	// Vehicles	
 	private _group_VRH = [ 
-		if (dzn_hostiles_armor isEqualTo []) then { 0 } else { GET_AMOUNT("VRH") }
+		if (dzn_hostiles_armor == 0) then { 0 } else { GET_AMOUNT("VRH") }
 		, [VEH_ROADHOLD, MAN_DRIVER, MAN_GUNNER]
 	];
 	
 	private _group_VRP = [ 
-		if (dzn_hostiles_armor isEqualTo []) then { 0 } else { GET_AMOUNT("VRH") }
+		if (dzn_hostiles_armor == 0) then { 0 } else { GET_AMOUNT("VRH") }
 		, [VEH_ROADPATROL, MAN_DRIVER, MAN_GUNNER	]
 	];
 	
 	// Reinforcements
 	private _group_4MP_R = [GET_AMOUNT("4MP-R"), [MAN_PATROL, MAN_PATROL, MAN_PATROL, MAN_PATROL]];
 	private _group_V_R = [ 
-		if (dzn_hostiles_armor isEqualTo []) then { 0 } else { GET_AMOUNT("V-R") }
+		if (dzn_hostiles_armor == 0) then { 0 } else { GET_AMOUNT("V-R") }
 		, [VEH_PATROL, MAN_DRIVER, MAN_GUNNER]
 	];
 	

@@ -55,3 +55,5 @@ dzn_roles_faction = 	[
 					,"ruvv" 	/*"RU VV"*/
 				] select ("par_playerFaction" call BIS_fnc_getParamValue);
 
+dzn_roles_swFreq = "228";
+dzn_roles_lrFreq = "50";

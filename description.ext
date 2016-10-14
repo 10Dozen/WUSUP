@@ -46,7 +46,7 @@ class Params
 		default = 0;
 		texts[] = {
 			"US Army (OCP)"
-			, "RU VV Specnaz"
+			, "РФ Спецназ ВВ"
 		};
 	}; 
 	class par_hostileFaction
@@ -56,8 +56,8 @@ class Params
 		default = 2;
 		texts[] = {
 			"US Army (OCP)"
-			, "RU VV Specnaz"
-			, "Rebels"		
+			, "РФ Спецназ ВВ"
+			, "Повстанцы"		
 		};
 	}; 
 	class par_hostileAmount
@@ -79,7 +79,7 @@ class Params
 		default = 0;
 		texts[] = {
 			"Нет"
-			, "Технички"
+			, "Автомобили"
 			, "БТР"
 			, "БМП"
 			, "Танки"		

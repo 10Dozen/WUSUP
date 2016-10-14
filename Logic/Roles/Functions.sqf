@@ -80,6 +80,22 @@ dzn_fnc_roles_assignPlayersRole = {
 	_kit spawn {
 		waitUntil { !isNil "dzn_gear_initDone" };
 		[player, _this] call dzn_fnc_gear_assignKit;
+		
+		waitUntil { player getVariable ["dzn_gear_done",false] };
+		
+		waitUntil { !isNil { call TFAR_fnc_activeSwRadio } }; 
+		[
+			(call TFAR_fnc_activeSwRadio), 
+			dzn_roles_swFreq
+		] call TFAR_fnc_setSwFrequency;
+		
+		if (!isNil {call TFAR_fnc_activeLrRadio}) then {
+			[
+				(call TFAR_fnc_activeLrRadio) select 0
+				,(call TFAR_fnc_activeLrRadio) select 1
+				,dzn_roles_lrFreq
+			] call TFAR_fnc_setLrFrequency;
+		};
 	};
 	/*
 		Join Group
