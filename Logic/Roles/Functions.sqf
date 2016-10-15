@@ -296,7 +296,7 @@ dzn_fnc_roles_showORBAT = {
 	/*
 		Platoon Leader
 	*/	
-	if !(isNull dzn_roles_pl) then {
+	if (!isNil "dzn_roles_pl" && { !isNull dzn_roles_pl }) then {
 		_orbatHQLines pushBack (
 			format [
 				_line_leaders_template

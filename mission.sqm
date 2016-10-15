@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=44;
+		nextID=68;
 	};
 	class Camera
 	{
 		pos[]={2912.8474,1653.756,4794.0479};
-		dir[]={0.69084066,-0.6951924,-0.19894448};
-		up[]={0.66808802,0.71876329,-0.19239245};
-		aside[]={-0.27674595,7.9770689e-007,-0.96100724};
+		dir[]={0.59658414,-0.71513921,-0.36441502};
+		up[]={0.61032736,0.69892001,-0.37281024};
+		aside[]={-0.52131164,7.7176082e-007,-0.85343951};
 	};
 };
 binarizationWanted=0;
@@ -74,7 +74,9 @@ class ScenarioData
 {
 	author="Tactical Shift";
 	overviewText="Warm Up and prepare Uranus";
+	overViewPicture="overview.jpg";
 	onLoadMission="Warm Up and prepare Uranus";
+	loadScreen="overview.jpg";
 	saving=0;
 	respawnDialog=0;
 	disabledAI=1;
@@ -547,7 +549,7 @@ class Mission
 						{
 							dataType="Trigger";
 							position[]={2008.7244,3.371403,2723.9597};
-							angle=3.7633305;
+							angle=3.7633293;
 							class Attributes
 							{
 								sizeA=15;

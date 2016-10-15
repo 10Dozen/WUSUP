@@ -3,7 +3,7 @@ call compile preprocessFileLineNumbers "Logic\Notifications\Functions.sqf";
 
 if !(hasInterface) exitWith {};
 
-waitUntil { time > 0 };
+waitUntil { time > 3 && !isNil "EndGameTimer" && !isNil "EndGameTimerLimit"};
 
 call dzn_fnc_notif_addORBATTopic;
 call dzn_fnc_notif_addTimeTopics;

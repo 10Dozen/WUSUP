@@ -10,10 +10,14 @@ if !(hasInterface) then {
 EndGameTimerLimit = ("par_endgametimer" call BIS_fnc_getParamValue)*60;
 EndGameTimer = EndGameTimerLimit;
 
+publicVariable "EndGameTimerLimit";
+publicVariable "EndGameTimer";
+
 [] spawn {
 	for "_i" from 0 to EndGameTimerLimit do {
 		sleep 1;
-		EndGameTimer = EndGameTimer - 1;	
+		EndGameTimer = EndGameTimer - 1;
+		publicVariable "EndGameTimer";
 	};
 };
 

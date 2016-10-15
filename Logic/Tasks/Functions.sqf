@@ -80,10 +80,14 @@ dzn_fnc_tasks_runSeizeAreaHandler = {
 		if (
 			!([Task_SeizeArea, "bool"] call dzn_fnc_isPlayerInArea)
 			|| { { (side _x == east) && {_x inArea Task_SeizeArea} } count allUnits > 0 }
-		) exitWith { Task_SeizeArea_Counter = nil; };
+		) exitWith { 
+			Task_SeizeArea_Counter = nil; 
+			publicVariable "Task_SeizeArea_Counter";
+		};
 		
 		// If players persist -- add +1 sec to counter
 		Task_SeizeArea_Counter = if (isNil "Task_SeizeArea_Counter") then { 0 } else { Task_SeizeArea_Counter + 1 };
+		publicVariable "Task_SeizeArea_Counter";
 		
 		// If counter ends -- Done this stuff
 		if (Task_SeizeArea_Counter > dzn_tasks_seizeTime) then {
